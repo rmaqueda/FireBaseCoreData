@@ -9,6 +9,6 @@
 #ifndef FireBaseCoreData_RMMConstants_h
 #define FireBaseCoreData_RMMConstants_h
 
-#define kFireBaseURL @"https://YOU_APP_HERE.firebaseio.com/coreData"
+#define kFireBaseURL @"https://nodj.firebaseio.com/coreData"
 
 #endif
