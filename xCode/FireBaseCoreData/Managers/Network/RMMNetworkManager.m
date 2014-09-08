@@ -10,7 +10,7 @@
 #import <Firebase/Firebase.h>
 #import <Firebase/FDataSnapshot.h>
 
-static NSString *const firebaseURL = @"YOUR_URL_HERE";
+static NSString *const firebaseURL = @"https://**your_app**.firebaseio.com/coreData";
 
 @interface RMMNetworkManager ()
 

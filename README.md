@@ -4,7 +4,7 @@ Un ejemplo de uso de múltiples contextos anidados en Core Data y de sincronizac
 ##Preparativos
 **NO FUNCIONA EN SIMULADOR**. Usa la librería de música MediaPlayer para los ejemplos.
 
-Para realizar estas pruebas es necesario crear una cuenta (gratuita) en FireBase y dar de alta una aplicación. Una vez creada la aplicación se usa su URL en la constante definida en el AppDelegate:
+Para realizar estas pruebas es necesario crear una cuenta (gratuita) en FireBase y dar de alta una aplicación. Una vez creada la aplicación se usa su URL en la constante definida en el NetworkManayer (RMMNetworkManager.m):
 
 ```
 static NSString *const firebaseURL = @"https://**your_app**.firebaseio.com/coreData";
