@@ -7,6 +7,7 @@
 //
 #import "RMMMasterViewController.h"
 #import "RMMDetailViewController.h"
+#import "RMMCoreDataStack.h"
 
 @interface RMMMasterViewController () <NSFetchedResultsControllerDelegate>
 

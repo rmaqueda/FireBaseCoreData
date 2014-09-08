@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class NSFetchRequest;
 
 @interface RMMCoreDataStack : NSObject
 

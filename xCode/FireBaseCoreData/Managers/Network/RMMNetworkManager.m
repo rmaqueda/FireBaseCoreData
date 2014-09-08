@@ -10,8 +10,6 @@
 #import <Firebase/Firebase.h>
 #import <Firebase/FDataSnapshot.h>
 
-static NSString *const firebaseURL = @"https://**your_app**.firebaseio.com/coreData";
-
 @interface RMMNetworkManager ()
 
 @property (nonatomic, strong) Firebase *fireBaseURL;
@@ -34,7 +32,7 @@ static NSString *const firebaseURL = @"https://**your_app**.firebaseio.com/coreD
 {
     self = [super init];
     if (self) {
-        _fireBaseURL = [[Firebase alloc] initWithUrl:firebaseURL];
+        _fireBaseURL = [[Firebase alloc] initWithUrl:kFireBaseURL];
     }
     return self;
 }
