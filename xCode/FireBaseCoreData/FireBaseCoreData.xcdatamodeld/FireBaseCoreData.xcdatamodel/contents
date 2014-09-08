@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Song">
+        <attribute name="songAlbum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songArtist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songDuration" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="songGenre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="songID" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="songTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="Song" positionX="261" positionY="189" width="128" height="135"/>
+    </elements>
+</model>

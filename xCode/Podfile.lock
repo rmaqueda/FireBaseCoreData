@@ -1,0 +1,13 @@
+PODS:
+  - Firebase (1.1.12)
+  - ISO8601DateFormatter (0.7)
+
+DEPENDENCIES:
+  - Firebase (~> 1.1.10)
+  - ISO8601DateFormatter (~> 0.7)
+
+SPEC CHECKSUMS:
+  Firebase: 26ca966dea982f29a4685f7fa8f596d56e5487ad
+  ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
+
+COCOAPODS: 0.33.1

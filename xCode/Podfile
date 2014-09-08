@@ -1,0 +1,12 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, "6.0"
+
+target "FireBaseCoreData" do
+    pod 'Firebase', '~> 1.1.10'
+    pod 'ISO8601DateFormatter', '~> 0.7'
+end
+
+target "FireBaseCoreDataTests" do
+
+end
+

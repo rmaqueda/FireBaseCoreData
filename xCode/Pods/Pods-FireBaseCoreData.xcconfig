@@ -1,0 +1,6 @@
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Firebase"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/Firebase" "${PODS_ROOT}/Headers/ISO8601DateFormatter"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/Firebase" -isystem "${PODS_ROOT}/Headers/ISO8601DateFormatter"
+OTHER_LDFLAGS = -ObjC -lc++ -licucore -framework CFNetwork -framework Firebase -framework Security -framework SystemConfiguration
+PODS_ROOT = ${SRCROOT}/Pods
