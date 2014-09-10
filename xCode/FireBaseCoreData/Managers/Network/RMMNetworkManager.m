@@ -9,6 +9,7 @@
 #import "RMMNetworkManager.h"
 #import <Firebase/Firebase.h>
 #import <Firebase/FDataSnapshot.h>
+//#define kFireBaseURL @"https://YOUR_APP_HERE.firebaseio.com/coreData"
 
 @interface RMMNetworkManager ()
 
@@ -43,6 +44,12 @@
     [self.fireBaseURL removeValue];
 }
 
+-(void)deleteSongInFireBase:(NSString *)songID
+{
+    Firebase *sonToDelete = [self.fireBaseURL childByAppendingPath:[NSString stringWithFormat:@"%@", songID]];
+    [sonToDelete removeValue];
+}
+
 -(void)uploadSongsToCloud:(NSArray *)songs completionBlock:(void(^)(NSError *error))completion;
 {
     for (NSDictionary *song in songs) {
@@ -59,8 +66,13 @@
     [self.fireBaseURL observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         
         if ([snapshot.value count]) {
-            NSArray *arraySongs = snapshot.value;
-            completion(nil, arraySongs);
+            
+            NSMutableArray *arraOfSongs = [NSMutableArray array];
+            for (NSString *songID in snapshot.value) {
+                [arraOfSongs addObject:[snapshot.value objectForKey:songID]];
+            }
+            
+            completion(nil, arraOfSongs);
         } else {
            NSError *error = [NSError errorWithDomain:@"Cloud Manager"
                                       code:1

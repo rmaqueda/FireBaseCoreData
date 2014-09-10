@@ -40,7 +40,7 @@
     [self.coreDataStack.backgroundMOC processPendingChanges];
     [[self.coreDataStack.backgroundMOC undoManager] disableUndoRegistration];
     
-    for (NSDictionary *song in (NSArray *)songs) {
+    for (NSDictionary *song in songs) {
         [self newSongInCoreData:song];
     }
     
@@ -55,12 +55,12 @@
 -(void)newSongInCoreData:(NSDictionary *)song
 {
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:self.coreDataStack.backgroundMOC];
-    [newManagedObject setValue:[song objectForKey:@"songID"] forKey:@"songID"];
-    [newManagedObject setValue:[song objectForKey:@"songTitle"] forKey:@"songTitle"];
-    [newManagedObject setValue:[song objectForKey:@"songAlbum"] forKey:@"songAlbum"];
-    [newManagedObject setValue:[song objectForKey:@"songDuration"] forKey:@"songDuration"];
-    [newManagedObject setValue:[song objectForKey:@"songArtist"] forKey:@"songArtist"];
-    [newManagedObject setValue:[song objectForKey:@"songGenre"] forKey:@"songGenre"];
+    [newManagedObject setValue:[song valueForKey:@"songID"] forKey:@"songID"];
+    [newManagedObject setValue:[song valueForKey:@"songTitle"] forKey:@"songTitle"];
+    [newManagedObject setValue:[song valueForKey:@"songAlbum"] forKey:@"songAlbum"];
+    [newManagedObject setValue:[song valueForKey:@"songDuration"] forKey:@"songDuration"];
+    [newManagedObject setValue:[song valueForKey:@"songArtist"] forKey:@"songArtist"];
+    [newManagedObject setValue:[song valueForKey:@"songGenre"] forKey:@"songGenre"];
 }
 
 -(void)updateSongInCoreData:(NSDictionary *)song managedObject:(NSManagedObject *)managedObject

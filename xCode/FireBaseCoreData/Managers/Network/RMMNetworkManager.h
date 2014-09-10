@@ -29,5 +29,6 @@
 -(void)waitingForChangeSong;
 -(void)waitingForDeleteInBackend;
 -(void)deleteAllSongsInFireBase;
+-(void)deleteSongInFireBase:(NSString *)songID;
 
 @end

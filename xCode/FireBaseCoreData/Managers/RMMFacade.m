@@ -53,19 +53,26 @@
             NSLog(@"Running in Simulator - No Scan Media Library.");
             [self downloadSongFormCloudWithcompletionBlock:^(NSError *error, NSArray *songs) {
                 if (!error) {
-                    //[self saveSongsLocal:songs];
+                    [self saveSongsLocal:songs];
+                    [self waitingForChangesInCloud];
                 }
             }];
         } else {
             [self.netManager deleteAllSongsInFireBase];
-            [self saveSongsInCloud:songs];
+            [self saveSongsInCloud:songs completionBlock:^(NSError *error) {
+                if (!error) {
+                    [self waitingForChangesInCloud];
+                } else {
+                    NSLog(@"%@", error.localizedDescription);
+                }
+            }];
         }
     }];
 }
 
 -(void)deleteSong:(NSString *)songID
 {
-    
+    [self.netManager deleteSongInFireBase:songID];
 }
 
 -(void)downloadSongFormCloudWithcompletionBlock:(void(^)(NSError *error, NSArray *songs))completion
@@ -83,15 +90,15 @@
   
 }
 
--(void)saveSongsInCloud:(NSArray *)songs
+-(void)saveSongsInCloud:(NSArray *)songs completionBlock:(void(^)(NSError *error))completion
 {
     [self.netManager uploadSongsToCloud:songs completionBlock:^(NSError *error) {
         if (!error) {
             [self.dbManager saveSongsInCoreData:songs completionBlock:^(NSError *error) {
                 if (!error) {
-                    [self waitingForChangesInCloud];
+                    completion(nil);
                 } else {
-                    NSLog(@"Error saving data in CoreData: %@", error.localizedDescription);
+                    completion(error);
                 }
             }];
             

@@ -15,4 +15,6 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import "RMMConstants.h"
+    #import "RMMCoreDataStack.h"
+    #import "RMMFacade.h"
 #endif
