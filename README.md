@@ -22,7 +22,7 @@ Son los siguiente:
 
 Contexto | Uso
 ------------- | -------------
-rootMOC |Todas las operaciones CRUD a disco
+rootMOC |Todas las operaciones a disco
 mainMOC |Todas las operaciones relativas a UI
 backgroundMOC |Todas las operaciones relativas a red
 
