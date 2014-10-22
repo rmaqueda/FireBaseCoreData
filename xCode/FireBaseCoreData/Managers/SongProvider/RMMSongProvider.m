@@ -10,6 +10,25 @@
 
 @implementation RMMSongProvider
 
++ (instancetype)sharedIntance {
+    static RMMSongProvider *_sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[RMMSongProvider alloc] init];
+    });
+    
+    return _sharedInstance;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 +(void)scanMediaItemsWithCompletionBlock:(void(^)(NSArray *songs, NSError *error))completion
 {
     #if TARGET_IPHONE_SIMULATOR
@@ -46,25 +65,6 @@
     }
     
     completion(songsItems, nil);
-}
-
-+ (instancetype)sharedIntance {
-    static RMMSongProvider *_sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedInstance = [[RMMSongProvider alloc] init];
-    });
-    
-    return _sharedInstance;
-}
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
 }
 
 @end
