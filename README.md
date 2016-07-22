@@ -46,7 +46,7 @@ La clase RMMNetworkManager usa el contexto backgroundMOC para las operaciones re
 
 La clase RMMMasterViewController tiene una tabla y un fetchedResultsController que usa el contexto mainMOC, para la actulización de UI.
 
-El contexto rootMOC se puede usar para gravar a disco la información cuando se quiera, esto persistirá la información, en este ejemplo no la he usado.
+El contexto rootMOC se puede usar para grabar a disco la información cuando se quiera, esto persistirá la información, en este ejemplo no la he usado.
 
 ##Sincronización con FireBase
 
